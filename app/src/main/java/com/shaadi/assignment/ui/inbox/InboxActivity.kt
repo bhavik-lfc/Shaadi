@@ -1,20 +1,25 @@
 package com.shaadi.assignment.ui.inbox
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.shaadi.assignment.BuildConfig
 import com.shaadi.assignment.R
-import com.shaadi.assignment.data.remote.Networking
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.schedulers.Schedulers
-import java.io.File
+import com.shaadi.assignment.databinding.ActivityInboxBinding
+import com.shaadi.assignment.di.component.ActivityComponent
+import com.shaadi.assignment.ui.base.BaseActivity
 
-class InboxActivity : AppCompatActivity() {
+class InboxActivity : BaseActivity<ActivityInboxBinding, InboxViewModel>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inbox)
+    override fun provideLayoutId(): Int = R.layout.activity_inbox
+
+    override fun setupView(savedInstanceState: Bundle?) {
+
+    }
+
+    override fun injectDependencies(activityComponent: ActivityComponent) {
+        activityComponent.inject(this)
+    }
+
+    override fun setViewModel(binding: ActivityInboxBinding) {
+        binding.viewModel = viewModel
     }
 
 }
