@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_6dp">
+
+
+            <ImageView
+                android:id="@+id/img_profile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_sent_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:paddingEnd="@dimen/dimen_6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="1st Feb" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_profile"
+                tools:text="BHAVIK K" />
+
+            <TextView
+                android:id="@+id/tv_extra_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"
+                tools:text="Mumbai, Maharashtra" />
+
+            <ImageView
+                android:id="@+id/img_accept"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:contentDescription="@string/accept"
+                android:src="@drawable/ic_approve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/img_decline"
+                app:layout_constraintTop_toBottomOf="@+id/tv_extra_info" />
+
+            <TextView
+                android:id="@+id/tv_accept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6dp"
+                android:text="@string/accept"
+                app:layout_constraintEnd_toEndOf="@+id/img_accept"
+                app:layout_constraintStart_toStartOf="@+id/img_accept"
+                app:layout_constraintTop_toBottomOf="@+id/img_accept" />
+
+            <ImageView
+                android:id="@+id/img_decline"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:contentDescription="@string/decline"
+                android:src="@drawable/ic_reject"
+                app:layout_constraintEnd_toStartOf="@+id/img_accept"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_extra_info" />
+
+            <TextView
+                android:id="@+id/tv_decline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_6dp"
+                android:text="@string/decline"
+                app:layout_constraintEnd_toEndOf="@+id/img_decline"
+                app:layout_constraintStart_toStartOf="@+id/img_decline"
+                app:layout_constraintTop_toBottomOf="@+id/img_decline" />
+
+            <TextView
+                android:id="@+id/tv_approve_reject_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_extra_info" />
+
+            <androidx.constraintlayout.widget.Group
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="img_accept,img_decline,tv_decline,tv_accept" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
