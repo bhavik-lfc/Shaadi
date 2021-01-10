@@ -1,5 +1,6 @@
 package com.shaadi.assignment.ui.inbox
 
+import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.ui.base.BaseViewModel
 import com.shaadi.assignment.utils.Logger
@@ -51,6 +52,15 @@ class InboxViewModel(
                         Logger.d(TAG, it.toString())
                     }
                 )
+        )
+
+    }
+
+    fun updateInvitationStatus(invitationStatus: InvitationStatus, id: Long) {
+        compositeDisposable.add(
+            inboxRepository.setInvitationStatus(invitationStatus, id)
+                .subscribeOn(schedulerProvider.io())
+                .subscribe()
         )
 
     }

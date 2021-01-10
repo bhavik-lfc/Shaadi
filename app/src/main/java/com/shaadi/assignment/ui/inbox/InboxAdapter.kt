@@ -1,5 +1,6 @@
 package com.shaadi.assignment.ui.inbox
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -8,10 +9,13 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.shaadi.assignment.R
 import com.shaadi.assignment.data.local.db.entity.InboxUser
+import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.databinding.RowInboxUserBinding
 
-class InboxAdapter(val clickListener: (InboxUser) -> Unit) : ListAdapter<InboxUser,
-        InboxAdapter.ViewHolder>(NewsDiffCallback()) {
+
+class InboxAdapter(val clickListener: (Long, InvitationStatus) -> Unit) :
+    ListAdapter<InboxUser,
+            InboxAdapter.ViewHolder>(NewsDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
@@ -26,13 +30,18 @@ class InboxAdapter(val clickListener: (InboxUser) -> Unit) : ListAdapter<InboxUs
     class ViewHolder private constructor(val binding: RowInboxUserBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(item: InboxUser, clickListener: (InboxUser) -> Unit) {
+        fun bind(item: InboxUser, clickListener: (Long, InvitationStatus) -> Unit) {
 
             binding.user = item
             binding.executePendingBindings()
 
-            itemView.setOnClickListener {
-                clickListener.invoke(item)
+
+            binding.imgAccept.setOnClickListener {
+                clickListener.invoke(item.id, InvitationStatus.ACCEPTED)
+            }
+
+            binding.imgDecline.setOnClickListener {
+                clickListener.invoke(item.id, InvitationStatus.REJECTED)
             }
 
         }

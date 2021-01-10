@@ -3,6 +3,7 @@ package com.shaadi.assignment.data.local.db.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.shaadi.assignment.data.local.db.entity.InboxUser
+import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import io.reactivex.Single
 
 @Dao
@@ -22,4 +23,8 @@ interface InboxUserDao {
 
     @Query("SELECT count(*) from inbox_user")
     fun count(): Single<Int>
+
+    @Query("UPDATE inbox_user SET invitation_status=:invitationStatus WHERE id=:id")
+    fun updateInvitationStatus(invitationStatus: InvitationStatus, id: Long): Single<Int>
+
 }

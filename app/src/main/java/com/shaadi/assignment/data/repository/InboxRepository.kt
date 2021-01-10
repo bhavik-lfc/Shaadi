@@ -3,6 +3,7 @@ package com.shaadi.assignment.data.repository
 import androidx.lifecycle.LiveData
 import com.shaadi.assignment.data.local.db.DatabaseService
 import com.shaadi.assignment.data.local.db.entity.InboxUser
+import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.data.remote.NetworkService
 import com.shaadi.assignment.data.remote.response.Result
 import io.reactivex.Single
@@ -27,5 +28,8 @@ class InboxRepository @Inject constructor(
 
 
     fun getUserCount(): Single<Int> = databaseService.inboxUserDao().count()
+
+    fun setInvitationStatus(invitationStatus: InvitationStatus, id: Long) =
+        databaseService.inboxUserDao().updateInvitationStatus(invitationStatus, id)
 
 }
