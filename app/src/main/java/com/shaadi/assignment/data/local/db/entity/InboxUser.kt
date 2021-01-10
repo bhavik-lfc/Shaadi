@@ -19,15 +19,11 @@ data class InboxUser(
 
     @ColumnInfo(name = "age")
     @NotNull
-    val age: String,
+    val age: Int,
 
     @ColumnInfo(name = "imgUrl")
     @NotNull
     val imgUrl: String,
-
-    @ColumnInfo(name = "registeredOn")
-    @NotNull
-    val registeredOn: String,
 
     @ColumnInfo(name = "location")
     @NotNull

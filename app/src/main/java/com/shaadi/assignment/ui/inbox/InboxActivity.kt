@@ -1,6 +1,7 @@
 package com.shaadi.assignment.ui.inbox
 
 import android.os.Bundle
+import android.widget.Toast
 import com.shaadi.assignment.R
 import com.shaadi.assignment.databinding.ActivityInboxBinding
 import com.shaadi.assignment.di.component.ActivityComponent
@@ -11,6 +12,17 @@ class InboxActivity : BaseActivity<ActivityInboxBinding, InboxViewModel>() {
     override fun provideLayoutId(): Int = R.layout.activity_inbox
 
     override fun setupView(savedInstanceState: Bundle?) {
+
+    }
+
+    override fun setupObservers() {
+        super.setupObservers()
+
+        viewModel.inboxUser.observe(this, {
+            it.let {
+                Toast.makeText(this, it.toString(), Toast.LENGTH_LONG).show()
+            }
+        })
 
     }
 

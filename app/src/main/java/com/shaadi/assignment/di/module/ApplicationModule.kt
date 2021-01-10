@@ -11,7 +11,7 @@ import com.shaadi.assignment.utils.RxSchedulerProvider
 import com.shaadi.assignment.utils.SchedulerProvider
 import dagger.Module
 import dagger.Provides
-import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Singleton
 
 @Module

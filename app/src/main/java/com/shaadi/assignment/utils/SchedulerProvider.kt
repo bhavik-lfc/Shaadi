@@ -1,6 +1,6 @@
 package com.shaadi.assignment.utils
 
-import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.Scheduler
 import javax.inject.Singleton
 
 @Singleton

@@ -3,11 +3,12 @@ package com.shaadi.assignment.di.component
 import com.shaadi.assignment.ShaadiApplication
 import com.shaadi.assignment.data.local.db.DatabaseService
 import com.shaadi.assignment.data.remote.NetworkService
+import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.di.module.ApplicationModule
 import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.SchedulerProvider
 import dagger.Component
-import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Singleton
 
 @Singleton
@@ -25,5 +26,7 @@ interface ApplicationComponent {
     fun getDatabaseService(): DatabaseService
 
     fun getNetworkHelper(): NetworkHelper
+
+    fun getInboxRepository(): InboxRepository
 
 }

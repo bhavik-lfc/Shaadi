@@ -6,7 +6,8 @@ import com.shaadi.assignment.R
 import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.Resource
 import com.shaadi.assignment.utils.SchedulerProvider
-import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.disposables.CompositeDisposable
+
 
 abstract class BaseViewModel(
     protected val schedulerProvider: SchedulerProvider,
