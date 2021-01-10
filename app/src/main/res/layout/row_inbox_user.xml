@@ -48,6 +48,7 @@
 
             <TextView
                 android:id="@+id/tv_name"
+                style="@style/AppTheme.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_6dp"
@@ -59,10 +60,11 @@
 
             <TextView
                 android:id="@+id/tv_extra_info"
+                style="@style/AppTheme.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_10dp"
-                android:text="@{user.location}"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:text="@{user.age+`, `+user.location}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_name"
@@ -70,9 +72,9 @@
 
             <ImageView
                 android:id="@+id/img_accept"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
                 android:contentDescription="@string/accept"
                 android:src="@drawable/ic_approve"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -82,6 +84,7 @@
 
             <TextView
                 android:id="@+id/tv_accept"
+                style="@style/AppTheme.Caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_6dp"
@@ -92,9 +95,9 @@
 
             <ImageView
                 android:id="@+id/img_decline"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
                 android:contentDescription="@string/decline"
                 android:src="@drawable/ic_reject"
                 app:layout_constraintEnd_toStartOf="@+id/img_accept"
@@ -104,6 +107,7 @@
 
             <TextView
                 android:id="@+id/tv_decline"
+                style="@style/AppTheme.Caption"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_6dp"
