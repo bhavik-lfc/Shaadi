@@ -118,6 +118,7 @@
 
             <TextView
                 android:id="@+id/tv_approve_reject_status"
+                style="@style/AppTheme.Body2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16dp"
@@ -125,7 +126,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_extra_info"
-                android:text="You have approved" />
+                app:textStatus="@{user.invitation_status}"
+                tools:text="You have approved" />
 
             <androidx.constraintlayout.widget.Group
                 android:layout_width="wrap_content"
