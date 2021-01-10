@@ -3,9 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="user"
+            type="com.shaadi.assignment.data.local.db.entity.InboxUser" />
+
+        <import type="com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus" />
+
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8dp"
+        app:cardCornerRadius="@dimen/corner_6dp"
+        app:cardElevation="@dimen/elevation_4dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,6 +31,7 @@
                 android:id="@+id/img_profile"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                app:imageUrl="@{user.imgUrl}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_6dp"
+                android:text="@{user.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/img_profile"
@@ -47,6 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_10dp"
+                android:text="@{user.location}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_name"
@@ -101,6 +117,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_16dp"
+                android:visibility="@{user.invitation_status != InvitationStatus.PENDING}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_extra_info" />
@@ -108,6 +125,7 @@
             <androidx.constraintlayout.widget.Group
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="@{user.invitation_status == InvitationStatus.PENDING}"
                 app:constraint_referenced_ids="img_accept,img_decline,tv_decline,tv_accept" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

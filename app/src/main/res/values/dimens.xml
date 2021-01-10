@@ -4,4 +4,8 @@
     <dimen name="dimen_12dp">12dp</dimen>
     <dimen name="dimen_10dp">10dp</dimen>
     <dimen name="margin_16dp">16dp</dimen>
+    <dimen name="elevation_4dp">4dp</dimen>
+    <dimen name="corner_6dp">6dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
 </resources>

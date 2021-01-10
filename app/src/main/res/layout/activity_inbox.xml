@@ -16,7 +16,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.home.HomeActivity">
+        tools:context=".ui.inbox.InboxActivity">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_inbox_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
