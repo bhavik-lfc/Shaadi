@@ -5,7 +5,6 @@ import com.shaadi.assignment.data.local.db.DatabaseService
 import com.shaadi.assignment.data.remote.NetworkService
 import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.di.module.ApplicationModule
-import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.SchedulerProvider
 import dagger.Component
 import io.reactivex.disposables.CompositeDisposable
@@ -24,8 +23,6 @@ interface ApplicationComponent {
     fun getCompositeDisposable(): CompositeDisposable
 
     fun getDatabaseService(): DatabaseService
-
-    fun getNetworkHelper(): NetworkHelper
 
     fun getInboxRepository(): InboxRepository
 

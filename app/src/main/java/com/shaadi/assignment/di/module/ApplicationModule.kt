@@ -6,7 +6,6 @@ import com.shaadi.assignment.ShaadiApplication
 import com.shaadi.assignment.data.local.db.DatabaseService
 import com.shaadi.assignment.data.remote.NetworkService
 import com.shaadi.assignment.data.remote.Networking
-import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.RxSchedulerProvider
 import com.shaadi.assignment.utils.SchedulerProvider
 import dagger.Module
@@ -39,9 +38,5 @@ class ApplicationModule(val application: ShaadiApplication) {
             application, DatabaseService::class.java,
             "shaadi-db"
         ).build()
-
-    @Singleton
-    @Provides
-    fun provideNetworkHelper(): NetworkHelper = NetworkHelper(application)
 
 }

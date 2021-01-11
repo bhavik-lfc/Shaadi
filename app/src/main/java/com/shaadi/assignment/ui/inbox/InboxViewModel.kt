@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.ui.base.BaseViewModel
-import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.SchedulerProvider
 import com.shaadi.assignment.utils.Utils
 import io.reactivex.Single
@@ -13,9 +12,8 @@ import io.reactivex.disposables.CompositeDisposable
 class InboxViewModel(
     schedulerProvider: SchedulerProvider,
     compositeDisposable: CompositeDisposable,
-    networkHelper: NetworkHelper,
     private val inboxRepository: InboxRepository
-) : BaseViewModel(schedulerProvider, compositeDisposable, networkHelper) {
+) : BaseViewModel(schedulerProvider, compositeDisposable) {
 
     val inboxUser = inboxRepository.getAll()
     val progressLoading: MutableLiveData<Boolean> = MutableLiveData(true)

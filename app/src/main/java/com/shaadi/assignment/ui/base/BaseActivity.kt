@@ -1,9 +1,7 @@
 package com.shaadi.assignment.ui.base
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.annotation.LayoutRes
-import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -31,18 +29,8 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
         viewModel.onCreate()
     }
 
-    fun showMessage(message: String) = Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-
-    fun showMessage(@StringRes resId: Int) = showMessage(getString(resId))
-
     protected open fun setupObservers() {
-        viewModel.messageString.observe(this, {
-            it.data?.run { showMessage(this) }
-        })
 
-        viewModel.messageStringId.observe(this, {
-            it.data?.run { showMessage(this) }
-        })
     }
 
     @LayoutRes
