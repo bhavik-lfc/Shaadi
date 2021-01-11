@@ -1,5 +1,8 @@
 package com.shaadi.assignment.ui.inbox
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.ui.base.BaseViewModel
@@ -8,6 +11,7 @@ import com.shaadi.assignment.utils.NetworkHelper
 import com.shaadi.assignment.utils.SchedulerProvider
 import com.shaadi.assignment.utils.Utils
 import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 
 class InboxViewModel(
@@ -23,6 +27,7 @@ class InboxViewModel(
     }
 
     val inboxUser = inboxRepository.getAll()
+    val progressLoading: MutableLiveData<Boolean> = MutableLiveData(true)
 
     override fun onCreate() {
         getNews()
@@ -44,12 +49,12 @@ class InboxViewModel(
                         Single.just(listOf(it))
                     })
                 }.subscribeOn(schedulerProvider.io())
-                .subscribe(
+                .doFinally {
+                    progressLoading.postValue(false)
+                }
+                .subscribe({},
                     {
-                        Logger.d(TAG, "Users present in db $it")
-                    },
-                    {
-                        Logger.d(TAG, it.toString())
+
                     }
                 )
         )

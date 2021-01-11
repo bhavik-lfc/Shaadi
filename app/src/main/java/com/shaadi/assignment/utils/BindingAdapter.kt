@@ -1,11 +1,8 @@
 package com.shaadi.assignment.utils
 
 import android.graphics.Color
-import android.graphics.Typeface
-import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
-import android.text.style.StyleSpan
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
