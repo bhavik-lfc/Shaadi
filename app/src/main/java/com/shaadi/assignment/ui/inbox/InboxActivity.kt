@@ -1,6 +1,7 @@
 package com.shaadi.assignment.ui.inbox
 
 import android.os.Bundle
+import androidx.recyclerview.widget.DefaultItemAnimator
 import com.shaadi.assignment.R
 import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
 import com.shaadi.assignment.databinding.ActivityInboxBinding
@@ -16,7 +17,9 @@ class InboxActivity : BaseActivity<ActivityInboxBinding, InboxViewModel>() {
 
     override fun setupView(savedInstanceState: Bundle?) {
         inboxAdapter = InboxAdapter(onInvitationClick)
+
         rv_inbox_list.apply {
+            itemAnimator = null
             adapter = inboxAdapter
         }
     }

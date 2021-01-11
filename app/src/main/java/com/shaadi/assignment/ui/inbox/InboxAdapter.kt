@@ -1,6 +1,5 @@
 package com.shaadi.assignment.ui.inbox
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
@@ -15,7 +14,7 @@ import com.shaadi.assignment.databinding.RowInboxUserBinding
 
 class InboxAdapter(val clickListener: (Long, InvitationStatus) -> Unit) :
     ListAdapter<InboxUser,
-            InboxAdapter.ViewHolder>(NewsDiffCallback()) {
+            InboxAdapter.ViewHolder>(InboxDiffCallback()) {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
@@ -65,7 +64,7 @@ class InboxAdapter(val clickListener: (Long, InvitationStatus) -> Unit) :
 
 }
 
-class NewsDiffCallback : DiffUtil.ItemCallback<InboxUser>() {
+class InboxDiffCallback : DiffUtil.ItemCallback<InboxUser>() {
     override fun areItemsTheSame(oldItem: InboxUser, newItem: InboxUser): Boolean {
         return oldItem == newItem
     }

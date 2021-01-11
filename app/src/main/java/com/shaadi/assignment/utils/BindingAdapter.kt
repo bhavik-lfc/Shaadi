@@ -1,15 +1,19 @@
 package com.shaadi.assignment.utils
 
 import android.graphics.Color
+import android.graphics.Typeface
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.shaadi.assignment.R
 import com.shaadi.assignment.data.local.db.typeconverters.InvitationStatus
+
 
 @BindingAdapter("app:imageUrl")
 fun setImage(view: ImageView, url: String?) {
@@ -30,16 +34,17 @@ fun setVisibility(view: View, value: Boolean) {
 fun setTextStatus(textView: TextView, invitationStatus: InvitationStatus) {
 
     if (textView.visibility == View.VISIBLE) {
-        val spannableStringBuilder = SpannableStringBuilder()
 
         val status = if (invitationStatus == InvitationStatus.ACCEPTED) "Accepted" else "Rejected"
         val color = if (invitationStatus == InvitationStatus.ACCEPTED) Color.GREEN else Color.RED
-        val spannableString = SpannableString(status)
-        spannableString.setSpan(ForegroundColorSpan(color), 0, status.length, 0)
 
-        spannableStringBuilder.append("You have ")
-        spannableStringBuilder.append(spannableString)
-        spannableStringBuilder.append(" this user")
+        val finalString: String =
+            textView.context.getString(R.string.invitation_status_message, status)
+
+        val spannableStringBuilder = SpannableStringBuilder(finalString)
+        val startIndex: Int = finalString.indexOf(status)
+
+        spannableStringBuilder.setSpan(ForegroundColorSpan(color), startIndex, startIndex + status.length, 0);
 
         textView.setText(spannableStringBuilder, TextView.BufferType.SPANNABLE)
 

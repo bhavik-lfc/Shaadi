@@ -1,6 +1,6 @@
 package com.shaadi.assignment.di.module
 
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.shaadi.assignment.data.repository.InboxRepository
 import com.shaadi.assignment.ui.base.BaseActivity
 import com.shaadi.assignment.ui.inbox.InboxViewModel
@@ -20,7 +20,7 @@ class ActivityModule(private val activity: BaseActivity<*, *>) {
         compositeDisposable: CompositeDisposable,
         networkHelper: NetworkHelper,
         inboxRepository: InboxRepository
-    ): InboxViewModel = ViewModelProviders.of(
+    ): InboxViewModel = ViewModelProvider(
         activity, ViewModelProviderFactory(InboxViewModel::class) {
             InboxViewModel(schedulerProvider, compositeDisposable, networkHelper, inboxRepository)
         }).get(InboxViewModel::class.java)
