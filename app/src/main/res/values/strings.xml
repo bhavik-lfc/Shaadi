@@ -4,4 +4,6 @@
     <string name="accept">Accept</string>
     <string name="decline">Decline</string>
     <string name="invitation_status_message">You have %s this user</string>
+    <string name="network_error_message">Something went wrong</string>
+    <string name="network_error">Network Error</string>
 </resources>
