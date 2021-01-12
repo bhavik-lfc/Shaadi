@@ -11,6 +11,7 @@
 - [RxJava2](https://github.com/ReactiveX/RxJava)
 - [Room](https://developer.android.com/training/data-storage/room)
 - [DataBinding](https://developer.android.com/topic/libraries/data-binding)
+- [Mockito | Testing](https://developer.android.com/training/testing/unit-testing/local-unit-tests)
 
 ## Architecture
 
