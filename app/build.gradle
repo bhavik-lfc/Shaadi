@@ -77,7 +77,7 @@ dependencies {
     // Database
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-rxjava2:2.3.0-alpha04"
+    implementation "androidx.room:room-rxjava2:$room_rx"
 
     // Image
     implementation "com.github.bumptech.glide:glide:$glide_version"
@@ -111,11 +111,4 @@ dependencies {
     testImplementation "android.arch.core:core-testing:$core_testing_version"
     testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
 
-    // UI Testing
-    androidTestImplementation "androidx.test:runner:$test_runner_version"
-    androidTestImplementation "androidx.test.ext:junit:$test_ext_runner_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
-    androidTestImplementation "androidx.test.espresso:espresso-intents:$espresso_version"
-    androidTestImplementation "org.mockito:mockito-core:$mockito_version"
-    kaptAndroidTest "com.google.dagger:dagger-compiler:$dagger_version"
 }

@@ -32,7 +32,7 @@ fun setTextStatus(textView: TextView, invitationStatus: InvitationStatus) {
 
     if (textView.visibility == View.VISIBLE) {
 
-        val status = if (invitationStatus == InvitationStatus.ACCEPTED) "Accepted" else "Rejected"
+        val status = if (invitationStatus == InvitationStatus.ACCEPTED) "Accepted" else "Declined"
         val color = if (invitationStatus == InvitationStatus.ACCEPTED) Color.GREEN else Color.RED
 
         val finalString: String =
