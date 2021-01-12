@@ -4,7 +4,7 @@
 
 ## Libraries and tools 🛠
 
-- [Kotlin](https://kotlinlang.org/) first
+- [Kotlin](https://kotlinlang.org/)
 - Architecture components
 - [Dagger 2](https://developer.android.com/training/dependency-injection) for dependency injection 🗡
 - [Retrofit](https://square.github.io/retrofit/)
