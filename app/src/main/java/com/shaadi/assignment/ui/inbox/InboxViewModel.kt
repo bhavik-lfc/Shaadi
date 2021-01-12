@@ -20,10 +20,10 @@ class InboxViewModel(
     val errorStatus: MutableLiveData<Boolean> = MutableLiveData(false)
 
     override fun onCreate() {
-        getNews()
+        getInboxUsers()
     }
 
-    private fun getNews() {
+    private fun getInboxUsers() {
 
         compositeDisposable.add(
             inboxRepository.getUserCount()
